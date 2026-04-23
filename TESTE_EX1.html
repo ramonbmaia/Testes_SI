@@ -7,26 +7,26 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         .inputs { display: flex; justify-content: center; margin: 15px 15px; gap: 5px; }
-        #num1, #num2 { width: 60px; height: 30px; border: 1px solid black; border-radius: 8px; padding: 0 0 0 10px; }
+        #num1, #num2 { width: 100px; height: 30px; border: 1px solid black; border-radius: 8px; padding: 0 0 0 10px; }
         .botoes { display: flex; justify-content: center; margin: 15px 15px; gap: 5px; }
-        #resultado { display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 145px; height: 60px; border: 1px solid black; border-radius: 8px; font-size: 35px; }
+        #resultado { display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 220px; height: 60px; border: 1px solid black; border-radius: 8px; font-size: 35px; }
     </style>
 </head>
 <body>
     <div class="inputs">
-        <input id="num1" type="number">
-        <input id="num2" type="number">
+        <input id="num1" type="number" placeholder="Inserir número">
+        <input id="num2" type="number" placeholder="Inserir número">
     </div>
 
     <div class="botoes">
         <button id="soma" onclick="soma()">+</button>
-        <button id="soma" onclick="subtracao()">-</button>
-        <button id="soma" onclick="multiplicacao()">*</button>
-        <button id="soma" onclick="divisao()">/</button>
+        <button id="subtracao" onclick="subtracao()">-</button>
+        <button id="multiplicacao" onclick="multiplicacao()">*</button>
+        <button id="divisao" onclick="divisao()">/</button>
         <button id="ce" onclick="c()">C</button>
     </div>
 
-    <div id="resultado"></div>
+    <div id="resultado">=</div>
     
     <script>
         function soma() {
@@ -64,7 +64,7 @@
         function c() {
             document.getElementById("num1").value = "";
             document.getElementById("num2").value = "";
-            document.getElementById("resultado").innerText = "";
+            document.getElementById("resultado").innerText = "=";
         }
     </script>
 </body>
