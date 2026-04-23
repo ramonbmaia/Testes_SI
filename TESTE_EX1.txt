@@ -1,0 +1,29 @@
+1. Objetivo dos Testes
+// Verificar o funcionamento geral do sistema.
+
+2. Metodologia de Teste
+// Teste por partes da calculadora: primeiro inputs, depois botões.
+
+3. Escopo e Testes
+// Serão testados os elementos e funcionalidades: inputs, botões e resultado.
+
+4. Tipos de Testes Aplicados
+// Testar se o input pega o valor corretamente e se os botões funcionam retornando o valor correto.
+
+5. Forma de Execução
+// Teste exploratório manual.
+
+6. Ambiente de Teste
+// Desktop, navegador Edge e dados de exemplo.
+
+7. Papéis e Responsabilidades
+// Testador realiza o teste, desenvolvedor corrige.
+
+8. Riscos e Contigências
+// Pode apresentar resultados divergentes. Caso ocorra, focar no problema principal.
+
+9. Ferramentas de Teste
+// VS Code e navegador Edge.
+
+10. Métricas de Qualidade
+// Verificar quantos testes não retornaram erros, quais indicaram algum erro e se a correção foi feita corretamente.
