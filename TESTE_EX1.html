@@ -10,7 +10,7 @@
         #num1, #num2 { width: 100px; height: 30px; border: 1px solid black; border-radius: 8px; padding: 0 0 0 10px; }
         .botoes { display: flex; justify-content: center; margin: 15px 15px; gap: 5px; }
         #soma, #subtracao, #multiplicacao, #divisao, #ce { border: none; border-radius: 8px; width: 40px; height: 25px; }
-            #soma:hover, #subtracao:hover, #multiplicacao:hover, #divisao:hover, #ce:hover { background-color: lightgray; color: black; }
+            #soma:hover, #subtracao:hover, #multiplicacao:hover, #divisao:hover, #ce:hover { background-color: lightgray; color: black; transform: scale(1.1); }
                 #soma:active, #subtracao:active, #multiplicacao:active, #divisao:active, #ce:active { background-color: black; color: white; }
         #resultado { display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 220px; height: 60px; border: 1px solid black; border-radius: 8px; font-size: 35px; }
         #resultadoTeste { display: flex; justify-content: center; margin-top: 15px; gap: 20px; }
@@ -32,10 +32,12 @@
 
     <div id="resultado">=</div>
 
+    <!--
     <div id="resultadoTeste">
         <button onclick="testeSoma()">Testar Adição</button>
         <p id="resultadoBtnTesteSoma">Aguardando teste...</p>
     </div>
+    -->
     
     <script>
         function soma() {
@@ -46,19 +48,29 @@
             document.getElementById("resultado").innerHTML = soma;
         }
 
-            // TESTE DE SOMA
-            function testeSoma() {
-                const a = 3;
-                const b = 4;
-                const valorEsperado = 7;
-                const testeSoma = a + b;
+        // TESTE DE SOMA
 
-                document.getElementById("resultadoBtnTesteSoma").innerHTML = "O resultado está correto: " + testeSoma;
+        function testarComponenteSoma() {
+            console.log("Iniciando teste do componente de Soma...");
 
-                if (testeSoma !== valorEsperado) {
-                    return(document.getElementById("resultadoBtnTesteSoma").innerHTML = "O resultado esperado era: " + valorEsperado);
-                }
+            document.getElementById("num1").value = "15";
+            document.getElementById("num2").value = "5";
+
+            soma(); 
+
+            let resultadoObtido = document.getElementById("resultado").innerHTML;
+            let resultadoEsperado = "20";
+
+            if (resultadoObtido === resultadoEsperado) {
+                console.log("TESTE PASSOU: A soma de 15 + 5 retornou com sucesso o valor " + resultadoObtido);
+            } else {
+                console.log("TESTE FALHOU: Esperava " + resultadoEsperado + ", mas o componente retornou " + resultadoObtido);
             }
+
+            c();
+        }
+
+        testarComponenteSoma();
 
         function subtracao() {
             let num1 = parseFloat(document.getElementById("num1").value);
@@ -89,6 +101,62 @@
             document.getElementById("num2").value = "";
             document.getElementById("resultado").innerText = "=";
         }
+
+        // TESTE DE COMPONENTES
+
+            function chamarTeste() {
+                const num1 = document.getElementById('num1');
+                const num2 = document.getElementById('num2');
+                const soma = document.getElementById('soma');
+                const subtracao = document.getElementById('subtracao');
+                const multiplicacao = document.getElementById('multiplicacao');
+                const divisao = document.getElementById('divisao');
+                const divResultado = document.getElementById('resultado');
+
+                if (num1) {
+                    console.log("O input 1 existe!");
+                } else {
+                    console.log("O input 1 não existe!");
+                }
+
+                if (num2) {
+                    console.log("O input 2 existe!");
+                } else {
+                    console.log("O input 2 não existe!");
+                }
+                        
+                if (soma) {
+                    console.log("O botão de Soma existe!");
+                } else {
+                    console.log("O botão de Soma não existe!");
+                } 
+                        
+                if (subtracao) {
+                    console.log("O botão de Subtração existe!");
+                } else {
+                    console.log("O botão de Subtração não existe!");
+                }
+                        
+                if (multiplicacao) {
+                    console.log("O botão de Multiplicação existe!");
+                } else {
+                    console.log("O botão de Multiplicação não existe!");
+                }
+                        
+                if (divisao) {
+                     console.log("O botão de Divisão existe!");
+                } else {
+                    console.log("O botão de Divisão não existe!");
+                }
+                        
+                if (divResultado) {
+                    console.log("A div Resultado existe!");
+                } else {
+                    console.log("A div Resultado não existe!");
+                }                        
+            }
+
+            chamarTeste();
     </script>
 </body>
 </html>
